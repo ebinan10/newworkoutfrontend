@@ -3,6 +3,7 @@ import { useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import {useLocation,useNavigate} from 'react-router-dom';
 import  UsePrivate from '../hooks/UsePrivate';
+import './App.css';
 
 function UpdateWorkOut() {
   const usePrivate = UsePrivate();

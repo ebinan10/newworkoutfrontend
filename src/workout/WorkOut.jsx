@@ -4,6 +4,7 @@ import jwt from "jwt-decode";
 import { useEffect } from 'react';
 import { useParams,useLocation }from 'react-router-dom';
 import { Buffer } from 'buffer';
+import './App.css';
 
 function WorkOut() { 
     const query = new URLSearchParams(useLocation().search);

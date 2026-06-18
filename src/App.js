@@ -1,4 +1,3 @@
-import './App.css';
 import Wrapper from './Wrapper';
 import Nav from './header/Nav'
 import ApiContext from '../src/hooks/ApiContext';

@@ -2,6 +2,7 @@ import React, { useState,useContext } from 'react'
 import Axios from '../api/Axios'
 import {useEffect} from 'react'
 import { UserDetailContext } from '../hooks/ApiContext';
+import './App.css';
 
 function CreateWorkout() {
     const [title, setTitle] = useState('');

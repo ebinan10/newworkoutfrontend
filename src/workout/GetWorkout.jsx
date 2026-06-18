@@ -5,7 +5,7 @@ import UpdateWorkOut from './UpdateWorkOut';
 import { isEditable } from '@testing-library/user-event/dist/utils';
 import {Link} from 'react-router-dom';
 import  UsePrivate from '../hooks/UsePrivate';
-
+import './App.css';
 
 function GetWorkOut() {  
   let isloaded = true;  
