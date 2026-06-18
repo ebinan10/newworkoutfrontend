@@ -1,0 +1,218 @@
+/* ==========================
+   FOOTER CONTAINER
+========================== */
+#footer {
+  background: linear-gradient(
+    135deg,
+    #020617,
+    #0f172a,
+    #1e293b
+  );
+
+  color: #e2e8f0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+  gap: 40px;
+
+  padding: 60px 80px 30px;
+
+  position: relative;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ==========================
+   FOOTER SECTION
+========================== */
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* ==========================
+   LISTS
+========================== */
+.ul {
+  list-style: none;
+}
+
+.ul li:first-child {
+  font-size: 1.2rem;
+  font-weight: 700;
+
+  color: white;
+
+  margin-bottom: 20px;
+
+  position: relative;
+}
+
+.ul li:first-child::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 50px;
+  height: 3px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #3b82f6,
+    #8b5cf6
+  );
+}
+
+.ul li {
+  margin-bottom: 12px;
+
+  color: #94a3b8;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.ul li:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+/* ==========================
+   SOCIAL ICONS
+========================== */
+.footerIcon {
+  display: flex;
+  gap: 20px;
+}
+
+.footerIcon i {
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0.05);
+
+  color: white;
+
+  font-size: 30px;
+
+  cursor: pointer;
+
+  transition: all 0.4s ease;
+}
+
+/* Facebook */
+.footerIcon i:nth-child(1):hover {
+  background: #1877f2;
+  transform: translateY(-8px) rotate(8deg);
+  box-shadow: 0 15px 25px rgba(24,119,242,0.4);
+}
+
+/* Twitter/X */
+.footerIcon i:nth-child(2):hover {
+  background: #1da1f2;
+  transform: translateY(-8px) rotate(-8deg);
+  box-shadow: 0 15px 25px rgba(29,161,242,0.4);
+}
+
+/* TikTok */
+.footerIcon i:nth-child(3):hover {
+  background: #000;
+  transform: translateY(-8px) rotate(8deg);
+  box-shadow: 0 15px 25px rgba(255,255,255,0.2);
+}
+
+/* ==========================
+   COPYRIGHT
+========================== */
+#footerLogo {
+  grid-column: 1 / -1;
+
+  text-align: center;
+
+  padding-top: 30px;
+  margin-top: 20px;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  color: #94a3b8;
+
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+/* ==========================
+   GLOW EFFECTS
+========================== */
+#footer::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 10%;
+
+  width: 250px;
+  height: 250px;
+
+  background: rgba(59,130,246,0.08);
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+}
+
+#footer::after {
+  content: "";
+
+  position: absolute;
+
+  right: 10%;
+  bottom: 0;
+
+  width: 250px;
+  height: 250px;
+
+  background: rgba(139,92,246,0.08);
+
+  border-radius: 50%;
+
+  filter: blur(100px);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+@media (max-width: 768px) {
+  #footer {
+    padding: 40px 25px;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer {
+    justify-content: center;
+  }
+
+  .ul li:first-child::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .footerIcon {
+    justify-content: center;
+  }
+}

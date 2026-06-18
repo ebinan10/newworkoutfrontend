@@ -1,508 +1,595 @@
-.App {
-  text-align: center;
-  background-color: rgb(238, 235, 241);
+/* =========================
+   PAGE BACKGROUND
+========================= */
+body {
   margin: 0;
-}
-*{
-  font-family: 'Roboto Mono', monospace;
-  margin:0;
-  
-}
-body{
-  font-size: 1.4em;
+  font-family: "Poppins", sans-serif;
+  background: #0f172a;
 }
 
+/* =========================
+   CENTER LAYOUT
+========================= */
+.workout-form {
+  min-height: 100vh;
 
-.form,.success, .text{
-  margin:auto;
-  width: 30%;
   display: flex;
-  font-size: 22px;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(124,58,237,0.25), transparent 40%),
+    #0f172a;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.workout-form form {
+  width: 100%;
+  max-width: 420px;
+
+  padding: 45px 35px;
+
+  border-radius: 26px;
+
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+
+  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  align-self: center;
-  align-content: center;
+  gap: 18px;
+
+  animation: fadeUp 0.6s ease;
 }
-.success{
+
+/* =========================
+   INPUT FIELDS
+========================= */
+.workout-form input[type="text"] {
+  height: 55px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 14px;
+
+  padding: 0 15px;
+
+  font-size: 15px;
+
+  background: rgba(255,255,255,0.92);
+
+  color: #0f172a;
+
+  transition: all 0.3s ease;
+}
+
+/* Focus effect */
+.workout-form input[type="text"]:focus {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 0 4px rgba(37,99,235,0.25),
+    0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* Placeholder */
+.workout-form input::placeholder {
+  color: #64748b;
+}
+
+/* =========================
+   SUBMIT BUTTON
+========================= */
+.workout-form input[type="submit"] {
+  height: 55px;
+
+  border: none;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-size: 16px;
+  font-weight: 700;
+
   color: white;
+
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+
+  transition: all 0.35s ease;
+
+  margin-top: 5px;
 }
-  .visible{
-    display: flex;
-    margin-left: 35px;
-    
+
+/* Hover */
+.workout-form input[type="submit"]:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 18px 35px rgba(37,99,235,0.35);
+}
+
+/* Click */
+.workout-form input[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
-/* input{
-  
-} */
-.home {
-  background-color: rgb(81, 81, 124);
-  background-size:cover;
-  height:max-content; 
-  min-height: 93vh;
-  overflow-y:hidden;
-}
-#profile, #getwork, .profile{
-background-color: rgb(81, 81, 124);
-  background-size:cover;
-  height:max-content; 
-  min-height: 73vh;
-} 
-#profile .form {
-  width:min-content;
-  /* padding: 20px; */
-}
-#profile .form ul{
-  padding-right: 50px;
-}
-.descript{
-  color: white;
-
-}
-.profile button{
-  width: 10vw !important ;
-}
-.home .description{
-  z-index:1;
-}
-#btn a{
-  color:rgb(81, 81, 124);
-  background-color: beige;
-  width: 40px;
-  height: 10px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-#btn a:hover{
-  background-color: black;
-  color: white;
-}
-.button a{
-  width: 100%;
-}
-.button{
-  margin-bottom: 20px;
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 500px) {
+  .workout-form form {
+    padding: 30px 20px;
+  }
+
+  .workout-form input[type="text"],
+  .workout-form input[type="submit"] {
+    height: 50px;
+  }
 }
 
-#getwork .form{
-  left: 400px !important;
-  top:200px;
-  opacity: .8
-}
-#getwork .description{
-  width: 100%;
-  
-}
-ul {
-  margin: 0;
-  box-sizing: border-box;
-  width: 90%;
-    list-style: none;
-}
-#getwork li{
-  margin: 20px;
-}
+/* =========================
+   PAGE BACKGROUND
+========================= */
+#getwork {
+  min-height: 100vh;
 
-
-section{
-  position: relative;
-  height: fit-content;
-  display: flex;
-  flex-wrap: wrap;
-  width: 60%;
-}
-
-.section{
-  height: fit-content;
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-.map{
-  display:flex;
-  flex-wrap: wrap;
-  width: 20vw;
-  background: rgb(34, 7, 7);
-  color: white;
-  margin: 10px;
-  padding-bottom: 20px;
-  align-content:center;
-  
-  
-}
-.errorMsg{
-  /* padding: 0 0 40px 0; */
-  background-color: rgb(81, 81, 124);
-  color: white;
-}
-.map ul{
-  /* margin: 0; */
-  padding: 0;
-}
-.map li{
-  align-items: center;
-  padding-left:10px;
-  width:100%;
   display: flex;
   justify-content: center;
-  height: 7vh;
-  text-decoration: none;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(124,58,237,0.25), transparent 40%),
+    #0f172a;
+}
+
+/* =========================
+   WRAPPER
+========================= */
+.container {
+  width: 100%;
+  max-width: 500px;
+}
+
+/* =========================
+   CARD
+========================= */
+.card {
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 26px;
+
+  padding: 40px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+
+  animation: fadeUp 0.6s ease;
+}
+
+/* =========================
+   TITLE
+========================= */
+.description {
+  text-align: center;
+
+  font-size: 1.8rem;
+  font-weight: 800;
+
+  margin-bottom: 25px;
+
+  background: linear-gradient(135deg, #38bdf8, #8b5cf6);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   DETAILS LIST
+========================= */
+.details {
   list-style: none;
-}
-.map button{
-  box-sizing: content-box;
-  width: 10vw;
-  margin-left: 25px;
-}
-section{
-  margin-top: 90px;
-  width:60%;
-  opacity: 0.9;
-  
-}
-.main{
-  align-items: center;
-  margin-left: 50px;
-}
-.button{
-    border: none ;
-    height: 30px;
-    width: 70px;
-    background-color: rgb(81, 81, 124);
-    opacity: .4;
-    color: white;
-}
-.button:hover{
-  background-color: black;
-  opacity: .4;
-  color: white;
-  border: none;
-}
-main{
-  background: rgb(11, 2, 27);
-  color: black;
-  opacity: 0.7;
-  width: 30vw;
-  height: 45vh;
-  position: relative;
-  top: 100px;
-  right: 80px;
-  
-}
-.form .input{
-  width: 250px;
-  box-sizing:1px 1px #000  ;
-}
-.form1{
+
   display: flex;
   flex-direction: column;
-  height: 100%;
-  color: antiquewhite;
+
+  gap: 15px;
+
+  margin-bottom: 30px;
 }
-.homeInput{
-  margin-bottom: 5px;
-}
-.inputWork{
-  width: 90%;
-  align-items: center;
-  align-content: center;
-  /* margin: 20px; */
-  /* padding: 0 20px 0 20px; */
-}
-.formClass{
+
+.details li {
+  padding: 14px 16px;
+
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.06);
+
+  color: #e2e8f0;
+
+  font-size: 15px;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.profile form  {
-  width: 35vw;
-}
-.profile .button{
-  width: 100px;
-  height: min-content;
-}
-
-.form1 input, .form input{
-  margin: 5px;
-  height: 40px;
-  font-size: 1.0em;
-  align-items: center;
-  /* text-align: center; */
-  border: none;
-  opacity: .4;
-}
-.buttonLi{
-  margin: 10px;
-  cursor: pointer;
-  width: 25vw;
-}
-.map a{
-  background-color:white ;
-  width: 100%;
-  color: #000000;
-  margin: 30px;
-  padding: 0 15px 0 15px;
-}
-.map a:hover{
-  background-color:rgb(67, 42, 126); 
-  color: rgb(241, 241, 241);
-}
- .link{
-  width: 15vw;
-  margin: 10px;
-}
-.form input, input{
-    box-shadow: 2px #000;
-}
-.icon{
-  margin: 10px 15px 0 10px;
-}
-.form{
-  background-color: white;
-  margin-bottom: 40px;
-}
-.form .description{
-  background-color: rgb(7, 0, 14);
-  color: rgb(96, 90, 131);
-  font-size: 1.2em;
-  width: 100%;
-  opacity:.9
-}
-.form1 input{
-margin: auto;
-}
-.form .input{
-    width: 80%;
-
-}
- .input1 {
-  display: flex;
-  justify-content: center;
-  margin-left: 30px;
-  width: 70%;
- }
-.textColor{
-  color:rgb(18, 78, 131);
-  text-shadow: 2px;
-}
-input:focus { 
-  outline: none !important;
-  /* border-color: #719ECE;
-  box-shadow: 0 0 10px #719ECE; */
-}
-
-#nav{
- max-width : 100%;
- /* min-width : 1024px; */
-}
-
-.text{
- 
-  color: white;
-  /* background-color: black; */
-  height:50vh;
-  width: 50%;
-  opacity: 0.8;
-  padding: 50px 50px 0px 50px;
-}
-
-#signup{
-  margin: 0;
-  background-color: rgb(81, 81, 124);
- background-size: cover;
-}
-
-.navBlock{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-
-}
-
-a{
-  text-decoration: none;
-   color: rgb(248, 246, 244);
-   /* font-size: large; */
-}
-.profile a:hover{
-  color: rgb(130, 13, 141);
-}
-
-a:hover{
-  color: rgb(216, 40, 40);
-}
-
-.nav { 
-  background: black;
-  color: white;
-  height: 50px;
-  text-align: center;
-  justify-content: center;
-  margin: 0;
-  display: flex;
-  flex-direction:row;
-  align-items: center;
   justify-content: space-between;
+
+  transition: 0.3s ease;
 }
-.btn{
+
+.details li:hover {
+  transform: translateX(5px);
+  background: rgba(255,255,255,0.1);
+}
+
+.details span {
+  font-weight: 700;
+  color: #93c5fd;
+}
+
+/* =========================
+   ACTION BUTTONS
+========================= */
+.actions {
   display: flex;
-  flex-direction:row;
+  gap: 15px;
 }
 
+/* Base button */
+.button {
+  flex: 1;
 
-.none{
-  display: none;
+  text-align: center;
+
+  padding: 14px;
+
+  border-radius: 14px;
+
+  text-decoration: none;
+  border: none;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
 }
-.user{
-  cursor:pointer;
-  font-size: 18px;
-  padding-right: 7px;
+
+/* EDIT BUTTON */
+.edit {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+  color: white;
 }
-.profile{
+
+.edit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37,99,235,0.35);
+}
+
+/* DELETE BUTTON */
+.delete {
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  color: white;
+}
+
+.delete:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(239,68,68,0.3);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 500px) {
+  .card {
+    padding: 25px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+}
+
+/* =========================
+   PAGE BACKGROUND
+========================= */
+#getwork {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 20px;
+
+  background:
+    radial-gradient(circle at top left, rgba(37,99,235,0.25), transparent 40%),
+    radial-gradient(circle at bottom right, rgba(124,58,237,0.25), transparent 40%),
+    #0f172a;
+}
+
+/* =========================
+   CONTAINER
+========================= */
+.container {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.form {
+  background: rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(22px);
+  -webkit-backdrop-filter: blur(22px);
+
+  border: 1px solid rgba(255,255,255,0.12);
+
+  border-radius: 26px;
+
+  padding: 40px 30px;
+
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+
   display: flex;
   flex-direction: column;
-}
-.block{
-  background:rgb(247, 247, 247);
-  display: block ;
-  position: absolute;
-  top: 50px;
-  width: 15vw;
-  height: 10vh;
-  gap: 5px;
-  cursor: default;
-  opacity:.5;
-}
-.block a{
-  
-  color: #0f0909;
-  cursor: pointer;
+  gap: 18px;
+
+  animation: fadeUp 0.6s ease;
 }
 
-.navlink, .display{
- display: flex;
- justify-content: space-evenly;
- align-items: center;
- padding-left: 30px;
- width:30%;
- cursor:pointer;
-}
-.signup{
-  padding:5px;
-  margin: 5px;
+/* =========================
+   INPUTS
+========================= */
+.inputWork {
+  height: 55px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 14px;
+
+  padding: 0 15px;
+
+  font-size: 15px;
+
+  background: rgba(255,255,255,0.92);
+
+  color: #0f172a;
+
+  transition: all 0.3s ease;
 }
 
-button {
-  width: 80px;
-  cursor: pointer;
-  margin: 15px;
+.inputWork::placeholder {
+  color: #64748b;
 }
-.buttonHome{
-  cursor: pointer;
-  margin: 15px;
-  width: 60%;
+
+.inputWork:focus {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 0 4px rgba(37,99,235,0.25),
+    0 10px 25px rgba(0,0,0,0.15);
 }
-#workout{
-   padding-top: 5px;
-   font-size: x-large;
-}
-#login, #signup, #getwork, .about{
-  background-color: rgb(81, 81, 124);
-  background-size: cover;
+
+/* =========================
+   BUTTON GROUP
+========================= */
+.btn {
   display: flex;
+  gap: 15px;
+
+  margin-top: 10px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.button {
+  flex: 1;
+
+  height: 50px;
+
+  border: none;
+  border-radius: 14px;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  color: white;
+
+  transition: all 0.3s ease;
+}
+
+/* Cancel Button */
+.btn button:first-child {
+  background: linear-gradient(135deg, #64748b, #334155);
+}
+
+.btn button:first-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(100,116,139,0.3);
+}
+
+/* Update Button */
+.btn button:last-child {
+  background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.btn button:last-child:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(37,99,235,0.35);
+}
+
+/* Active click effect */
+.button:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
   }
-  .container{
-    width: 100%;
-    display: flex;
-    align-self: center;
-    margin: auto; 
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  #login{
-    margin: 0;
-    flex-direction: column;
-    justify-content: space-evenly;
-  }
-  .about{
-    min-height: 80vh;
-  }
-   #getwork, #profile{
-    min-height:57vh;
-    padding-top: 140px;
-  }
-  #login, #signup{
-    min-height:57vh;
-    padding-top: 90px;
-  }
-  .loginspan{
-    width: 100%;
-    margin: 15px;
-  }
-   a.loginlink {
-    font-size: 1.0em;
-    color: #2a85da;
-  }
-   a:hover{
-    color:rgb(61, 61, 214);
-  }
-  #getwork ul{
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    height: 30%;
-  }
-  .ul{
-    list-style: none;
-    text-align: center;
-  }
-  #footer{
-    margin: 0;
-    background: black;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    box-sizing: border-box;
-  }
-  #footer ul {
-    width: 70%;
-  }
-  .footer{
-    margin: 0;
-    color: aliceblue;
-    /* padding: 20px; */
-  }
-  .large.material-icons.primary{
-    align-items: center;
-    width: 100px;
-  }
-  .footerIcon{
-    margin: 0;
-    width: 100%;
-    color: white;
-  }
-  #footerLogo{
-    color: aliceblue;
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    align-items: center;
-    width: 100%
-  }
-  
-  
-  a.navlink.active{
-    color:blueviolet;
-    border-bottom: solid blueviolet;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 500px) {
+  .form {
+    padding: 25px 20px;
   }
 
-  .about{
-    background-size: cover;
-    background-color: rgb(81, 81, 124);
-    background-blend-mode: darken;
-    margin:auto;
-    align-items: center;
+  .btn {
+    flex-direction: column;
   }
-  button .btnn{
-    z-index: 1;
+
+  .inputWork {
+    height: 50px;
   }
+}
+
+.workout {
+  width: 250px;
+  height: 120px;
+
+  margin: 40px auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: white;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  box-shadow:
+    0 15px 35px rgba(37, 99, 235, 0.35);
+
+  position: relative;
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+}
+
+/* Hover effect */
+.workout:hover {
+  transform: translateY(-6px) scale(1.03);
+
+  box-shadow:
+    0 25px 60px rgba(37, 99, 235, 0.45);
+}
+
+/* Glow animation layer */
+.workout::before {
+  content: "";
+
+  position: absolute;
+
+  width: 200%;
+  height: 200%;
+
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.2),
+    transparent 60%
+  );
+
+  top: -50%;
+  left: -50%;
+
+  transform: rotate(25deg);
+
+  opacity: 0;
+
+  transition: 0.4s ease;
+}
+
+/* Show glow on hover */
+.workout:hover::before {
+  opacity: 1;
+}
+
+/* Click effect */
+.workout:active {
+  transform: scale(0.98);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 500px) {
+  .workout {
+    width: 90%;
+    height: 100px;
+    font-size: 1.1rem;
+  }
+}

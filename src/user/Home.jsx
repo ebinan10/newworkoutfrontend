@@ -3,6 +3,7 @@ import {useState, useEffect, useContext} from 'react';
 import { Link, useLocation,useNavigate } from 'react-router-dom';
 import { UserDetailContext } from '../hooks/ApiContext'; 
 import  UsePrivate from '../hooks/UsePrivate';
+import "./home.css"
 
 
 const Home = () =>{

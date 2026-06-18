@@ -15,8 +15,17 @@ function User() {
         }, [])
         
       
-  return ( 
-    <div></div>
+  return (
+    <div className="success">
+         return (
+             <div className="success-container">
+                  <h1 className="success-title">🎉 Success!</h1>
+                  <p className="success-message">
+                    Your data was submitted successfully.
+                  </p>
+                </div>
+          );
+        </div>
   )
 }
 

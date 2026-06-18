@@ -3,19 +3,14 @@ import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import {UseRefreshToken} from '../hooks/UseRefreshToken'
+import "./footer.css"
 
 const Footer =()=> {
  
   
   return (
     <div id='footer'>
-      <div className='footer'> 
-               <div className='footerIcon'>     
-                <i className="large material-icons primary">insert_facebook</i>
-                <i className="large material-icons secondary">insert_twitter</i>
-              <i className="large material-icons primary">insert_tiktok</i>
-                    </div>    
-                  </div>
+
          <div className='footer'>
          
                         <ul className='ul'>
@@ -30,8 +25,9 @@ const Footer =()=> {
          
                         <ul className='ul'>
                         <li>Workout Training</li>
-                        <li></li>
-                        <li></li>
+                        <li>Athletics</li>
+                        <li>Body Building</li>
+                        <li>Trainers</li>
                         </ul>
                     
          </div>
@@ -39,13 +35,14 @@ const Footer =()=> {
          
                         <ul className='ul'>
                             <li>Easy Training</li>
-                            <li></li>
-                            <li></li>
+                            <li>Running</li>
+                            <li>Skipping</li>
+                            <li>Weight Lifting</li>
                         </ul>
                     
          </div>
           <div  id='footerLogo'>
-                &copy;2023
+              Workout &copy;2023
           </div>
     </div>
   )

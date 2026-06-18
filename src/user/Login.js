@@ -5,6 +5,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons'
 import { UserDetailContext } from '../hooks/ApiContext';
 import  {UseAxios} from '../hooks/UseAxios';
 import axios from 'axios';
+import "./login.css"
 
 
 function Login() {
@@ -46,6 +47,7 @@ function Login() {
                 password
             }) 
             console.log(login)
+            console.log(email,password)
             if(login.status===200){
             e.preventDefault()
             console.log(data);

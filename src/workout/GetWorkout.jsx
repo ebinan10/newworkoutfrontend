@@ -91,26 +91,37 @@ console.log(err)
   }
 },[])
   return (
-    <div id='getwork'>
-      <div className='container'>
-          <div className='form'>
-            <div className='description'>Workout Details</div>
-          <ul >
-            
-            <li>Title:{title}</li>
-            <li>Reps:{reps}</li>
-            <li>Load:{load}</li>
+    <div id="getwork">
+      <div className="container">
+        <div className="card">
+
+          <div className="description">Workout Details</div>
+
+          <ul className="details">
+            <li><span>Title:</span> {title}</li>
+            <li><span>Reps:</span> {reps}</li>
+            <li><span>Load:</span> {load}</li>
           </ul>
-          <div className='btn'>  
-          <Link 
-            className='btn'
-            to = { `/update/${id}`} 
-            state= {{title: title, reps : reps, load: load}}></Link> 
-          <button className='button' onClick={editWorkout}> edit </button>
-          <button className='button' onClick={deleteWorkout}>delete</button>
-          </div></div>
+
+          <div className="actions">
+
+            <Link
+              to={`/update/${id}`}
+              state={{ title, reps, load }}
+              className="button edit"
+            >
+              Edit
+            </Link>
+
+            <button className="button delete" onClick={deleteWorkout}>
+              Delete
+            </button>
+
           </div>
+
+        </div>
       </div>
+    </div>
   )
 }
 

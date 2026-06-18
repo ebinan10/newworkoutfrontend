@@ -1,0 +1,303 @@
+/* ===========================
+   GOOGLE FONT
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   GLOBAL
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f172a;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 0 60px;
+  height: 80px;
+
+  background: rgba(15, 23, 42, 0.85);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+/* ===========================
+   LOGO
+=========================== */
+#workout {
+  font-size: 2rem;
+  font-weight: 800;
+
+  letter-spacing: 3px;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #2563eb,
+    #8b5cf6
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+#workout:hover {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   NAV LINKS
+=========================== */
+.navlink {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.navlink a {
+  text-decoration: none;
+  color: #cbd5e1;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  position: relative;
+
+  transition: all 0.3s ease;
+}
+
+/* Animated underline */
+.navlink a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -8px;
+
+  width: 0;
+  height: 3px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #2563eb
+  );
+
+  transition: 0.4s ease;
+}
+
+.navlink a:hover::after {
+  width: 100%;
+}
+
+.navlink a:hover {
+  color: white;
+}
+
+/* Active Link */
+.navlink a.active {
+  color: white;
+}
+
+/* ===========================
+   USER PROFILE
+=========================== */
+.user {
+  background: rgba(255, 255, 255, 0.08);
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  color: white;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.user:hover {
+  background: rgba(59, 130, 246, 0.2);
+
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   DROPDOWN ICON
+=========================== */
+svg {
+  color: white;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+svg:hover {
+  color: #38bdf8;
+  transform: rotate(180deg);
+}
+
+/* ===========================
+   DROPDOWN MENU
+=========================== */
+.navBlock {
+  position: absolute;
+
+  top: 85px;
+  right: 40px;
+
+  width: 220px;
+
+  background: rgba(15, 23, 42, 0.95);
+
+  backdrop-filter: blur(20px);
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3);
+
+  animation: dropdown 0.3s ease;
+}
+
+/* Dropdown Links */
+.navBlock a {
+  display: block;
+
+  padding: 16px 20px;
+
+  color: #cbd5e1;
+  text-decoration: none;
+
+  transition: 0.3s ease;
+}
+
+.navBlock a:hover {
+  background: rgba(59, 130, 246, 0.15);
+
+  color: white;
+
+  padding-left: 30px;
+}
+
+/* ===========================
+   AUTH BUTTONS
+=========================== */
+.navlink a[href="/user"] {
+  background: linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+  );
+
+  color: white;
+
+  padding: 12px 24px;
+
+  border-radius: 50px;
+
+  box-shadow:
+    0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.navlink a[href="/user"]:hover {
+  transform: translateY(-3px);
+}
+
+/* Login Button */
+.navlink a[href="/login"] {
+  padding: 10px 18px;
+  border-radius: 50px;
+}
+
+.navlink a[href="/login"]:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* ===========================
+   SHOW / HIDE
+=========================== */
+.show {
+  display: block;
+}
+
+.hide {
+  display: none;
+}
+
+/* ===========================
+   DROPDOWN ANIMATION
+=========================== */
+@keyframes dropdown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+    height: auto;
+  }
+
+  #workout {
+    font-size: 1.5rem;
+  }
+
+  .navlink {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navBlock {
+    width: 180px;
+    right: 10px;
+  }
+}

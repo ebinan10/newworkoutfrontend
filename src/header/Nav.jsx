@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import {UserDetailContext} from '../hooks/ApiContext';
 import  UsePrivate from '../hooks/UsePrivate';
-import axios from 'axios'
+import axios from 'axios';
+import "./nav.css";
 
  function Nav() {
   const [data, setData] = useContext(UserDetailContext)
