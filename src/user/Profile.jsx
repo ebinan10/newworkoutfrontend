@@ -46,7 +46,7 @@ function Profile() {
     
 
   return (
-    <div id='profile'>
+    <div className='profile'>
       <div className="container">
     <div className='form'>
       <div className='description'>Users Details</div>

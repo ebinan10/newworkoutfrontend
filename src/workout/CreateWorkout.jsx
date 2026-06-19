@@ -1,68 +1,111 @@
-import React, { useState,useContext } from 'react'
-import Axios from '../api/Axios'
-import {useEffect} from 'react'
-import { UserDetailContext } from '../hooks/ApiContext';
-import './App.css';
+import React, { useState, useContext } from "react";
+import Axios from "../api/Axios";
+import { UserDetailContext } from "../hooks/ApiContext";
+import "./App.css";
 
 function CreateWorkout() {
-    const [title, setTitle] = useState('');
-    const [reps, setReps] = useState(0);
-    const [load, setLoad] = useState(0);
-    const {token} = useContext(UserDetailContext);
+  const { token } = useContext(UserDetailContext);
 
+  const [formData, setFormData] = useState({
+    title: "",
+    reps: "",
+    load: "",
+  });
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-      if (!title || !reps || !load) {
-        alert("Please fill all fields");
-        return;
-      }
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-      const workout = {
-        title,
-        reps,
-        load,
-      };
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
 
-      console.log("Workout created:", workout);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-      // clear inputs
-      setTitle("");
-      setReps("");
-      setLoad("");
-    };
-    
-     
+    const { title, reps, load } = formData;
+
+    if (!title.trim() || !reps || !load) {
+      return setError("Please fill all fields");
+    }
+
+    try {
+      setLoading(true);
+      setError("");
+
+      const response = await Axios.post(
+        "/workouts",
+        {
+          title,
+          reps: Number(reps),
+          load: Number(load),
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      console.log(response.data);
+
+      setFormData({
+        title: "",
+        reps: "",
+        load: "",
+      });
+    } catch (err) {
+      setError(
+        err.response?.data?.message || "Failed to create workout"
+      );
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="workout-form">
       <form onSubmit={handleSubmit}>
+        <h2>Create Workout</h2>
 
         <input
           type="text"
-          placeholder="Title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
+          name="title"
+          placeholder="Workout Title"
+          value={formData.title}
+          onChange={handleChange}
         />
 
         <input
-          type="text"
+          type="number"
+          name="reps"
           placeholder="Reps"
-          value={reps}
-          onChange={(e) => setReps(e.target.value)}
+          value={formData.reps}
+          onChange={handleChange}
+          min="1"
         />
 
         <input
-          type="text"
-          placeholder="Load"
-          value={load}
-          onChange={(e) => setLoad(e.target.value)}
+          type="number"
+          name="load"
+          placeholder="Load (kg)"
+          value={formData.load}
+          onChange={handleChange}
+          min="0"
         />
 
-        <input type="submit" value="Create Workout" />
+        {error && <p className="error">{error}</p>}
+
+        <button type="submit" disabled={loading}>
+          {loading ? "Creating..." : "Create Workout"}
+        </button>
       </form>
     </div>
-  )
+  );
 }
 
-export default CreateWorkout
+export default CreateWorkout;

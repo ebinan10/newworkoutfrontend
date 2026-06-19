@@ -25,12 +25,17 @@ body {
    PAGE CONTAINER
 ========================== */
 .profile {
-    mrargin:auto;
+    width:100%;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px;
+}
+
+.profile.container{
+    width: 50%;
+    margin: 50px;
 }
 
 /* ==========================
